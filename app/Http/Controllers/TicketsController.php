@@ -47,7 +47,7 @@ public function __construct(){
 
     public function userTickets(){
         $tickets = Ticket::where('user_id',Auth::user()->id)->paginate(10);
-        $categories = Category:all();
+        $categories = Category::all();
 
         return view('tickets.user.tickets', compact('tickets', 'categories'));
     }
